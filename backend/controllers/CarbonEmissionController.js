@@ -1,10 +1,10 @@
 const calculate = (req, res) => {
   try {
     const { query } = req;
-    const data = Object.entries(query).map(([option, value]) => {
-      const result = options(option, value);
+    const data = Object.entries(query).map(([category, value]) => {
+      const result = categories(category, value);
       return {
-        option: option,
+        category: category,
         total: result,
       };
     });
@@ -18,10 +18,10 @@ const calculate = (req, res) => {
   }
 };
 
-const options = (option, value) => {
+const categories = (category, value) => {
   if (isNaN(value)) return 0;
 
-  const options = {
+  const categories = {
     electricity: (klw) => klw * 2,
     natural_gas: (mc) => mc * 3,
     heating_oil: (mc) => mc * 3,
@@ -30,9 +30,9 @@ const options = (option, value) => {
     white_meat: (kg) => kg * 2.4,
   };
 
-  if (!options[option]) return 0;
+  if (!categories[category]) return 0;
 
-  return options[option](value);
+  return categories[category](value);
 };
 
-export { options, calculate };
+export { categories, calculate };

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Card, Col, Form, Row } from "react-bootstrap";
-const Housing = ({ onGoback, onNext, option, totalPeople }) => {
-  const [housing, setHousing] = useState(option);
+const Housing = ({ onGoback, onNext, category, totalPeople }) => {
+  const [housing, setHousing] = useState(category);
   const [people, setPeople] = useState(totalPeople);
 
   const addFoodToState = () => {
-    onNext({ option: "housing", payload: housing, people });
+    onNext({ category: "housing", payload: housing, people });
   };
 
   const onChange = (e) => {

@@ -13,10 +13,10 @@ const Review = ({ state, onGoBack, onCalculate }) => {
     <Row className="g-4">
       <Col xs={12}>
         <ListGroup>
-          {Object.keys(state.options).map((option) => (
-            <div key={option} className="my-2">
-              <h4 className="text-align-center">{option.toUpperCase()}</h4>
-              {Object.entries(state.options[option]).map(([key, value]) => (
+          {Object.keys(state.categories).map((category) => (
+            <div key={category} className="my-2">
+              <h4 className="text-align-center">{category.toUpperCase()}</h4>
+              {Object.entries(state.categories[category]).map(([key, value]) => (
                 <ListGroup.Item key={key}>
                   <Row>
                     <Col>{key.split("_").join(" ").toUpperCase()}</Col>

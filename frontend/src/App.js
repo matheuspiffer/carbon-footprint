@@ -12,7 +12,7 @@ import api from "./api";
 const defaultState = {
   step: 1,
   total_people: 1,
-  options: {
+  categories: {
     housing: {
       electricity: "",
       natural_gas: "",
@@ -32,13 +32,12 @@ const defaultState = {
 
 const stateReducer = (state, action) => {
   if (action.type === "ADD") {
-    console.log(action);
     return {
       step: state.step + 1,
       total_people: action.people || state.total_people,
-      options: {
-        ...state.options,
-        [action.option]: action.payload,
+      categories: {
+        ...state.categories,
+        [action.category]: action.payload,
       },
     };
   }
@@ -76,8 +75,8 @@ const stateReducer = (state, action) => {
 function App() {
   const [state, dispatch] = useReducer(stateReducer, defaultState);
 
-  const onAddNext = useCallback(({ payload, option, people }) => {
-    dispatch({ type: "ADD", payload, option, people });
+  const onAddNext = useCallback(({ payload, category, people }) => {
+    dispatch({ type: "ADD", payload, category, people });
   }, []);
 
   const onGoBack = useCallback(() => {
@@ -95,10 +94,10 @@ function App() {
   const onCalculate = useCallback(async () => {
     try {
       let query = [];
-      Object.keys(state.options).forEach((option) => {
-        Object.keys(state.options[option]).forEach((key) => {
-          let value = state.options[option][key];
-          if (option === "housing" && !isNaN(value)) {
+      Object.keys(state.categories).forEach((category) => {
+        Object.keys(state.categories[category]).forEach((key) => {
+          let value = state.categories[category][key];
+          if (category === "housing" && !isNaN(value)) {
             value = value / state.total_people;
           }
           query.push(`&${key}=${value}`);
@@ -110,7 +109,7 @@ function App() {
       console.error(error);
       alert("Error");
     }
-  }, [state.options]);
+  }, [state.categories]);
 
   return (
     <Container>
@@ -127,7 +126,7 @@ function App() {
                   <Housing
                     onNext={onAddNext}
                     onGoBack={onGoBack}
-                    option={state.options.housing}
+                    category={state.categories.housing}
                     totalPeople={state.total_people}
                   />
                 )}
@@ -135,7 +134,7 @@ function App() {
                   <Food
                     onNext={onAddNext}
                     onGoBack={onGoBack}
-                    option={state.options.food}
+                    category={state.categories.food}
                   />
                 )}
                 {state.step === 4 && (

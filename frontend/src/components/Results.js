@@ -20,8 +20,8 @@ const Results = ({ results }) => {
             </thead>
             <tbody>
               {results.map((result) => (
-                <tr key={result.option}>
-                  <td>{result.option.split("_").join(" ").toUpperCase()}</td>
+                <tr key={result.category}>
+                  <td>{result.category.split("_").join(" ").toUpperCase()}</td>
                   <td>{result.total}</td>
                   <td>{`${
                     total ? ((result.total / total) * 100).toFixed() : 0
