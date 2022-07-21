@@ -1,1 +1,1 @@
-const housing = ["electricity", "natural_gas", "heating_oil", "coal"];
+const options = ["electricity", "natural_gas", "heating_oil", "coal", "miles"];

@@ -4,49 +4,49 @@ const Steps = ({ step, moveTo }) => {
   return (
     <Nav variant="tabs" className="d-flex justify-content-around bg-light">
       <Nav.Item>
-        {step >= 1 ? (
-          <Nav.Link className="text-success" onClick={() => moveTo(1)}>
-            <strong>Welcome</strong>
-          </Nav.Link>
-        ) : (
-          <Nav.Link disabled>Welcome</Nav.Link>
-        )}
+        <Nav.Link
+          className={`${step < 1 ? "" : "text-success"}`}
+          onClick={() => moveTo(1)}
+          disabled={step < 1}
+        >
+          <strong>Welcome</strong>
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        {step >= 2 ? (
-          <Nav.Link className="text-success" onClick={() => moveTo(2)}>
-            <strong>Housing</strong>
-          </Nav.Link>
-        ) : (
-          <Nav.Link disabled>Housing</Nav.Link>
-        )}
+        <Nav.Link
+          className={`${step < 2 ? "" : "text-success"}`}
+          onClick={() => moveTo(2)}
+          disabled={step < 2}
+        >
+          <strong>Housing</strong>
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        {step >= 3 ? (
-          <Nav.Link className="text-success" onClick={() => moveTo(3)}>
-            <strong>Food</strong>
-          </Nav.Link>
-        ) : (
-          <Nav.Link disabled>Food</Nav.Link>
-        )}
+        <Nav.Link
+          className={`${step < 3 ? "" : "text-success"}`}
+          onClick={() => moveTo(3)}
+          disabled={step < 3}
+        >
+          <strong>Transportation</strong>
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        {step >= 4 ? (
-          <Nav.Link className="text-success" onClick={() => moveTo(4)}>
-            <strong>Review</strong>
-          </Nav.Link>
-        ) : (
-          <Nav.Link disabled>Review</Nav.Link>
-        )}
+        <Nav.Link
+          className={`${step < 4 ? "" : "text-success"}`}
+          onClick={() => moveTo(4)}
+          disabled={step < 4}
+        >
+          <strong>Review</strong>
+        </Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        {step >= 5 ? (
-          <Nav.Link className="text-success" onClick={() => moveTo(5)}>
-            <strong>Results</strong>
-          </Nav.Link>
-        ) : (
-          <Nav.Link disabled>Results</Nav.Link>
-        )}
+        <Nav.Link
+          className={`${step < 5 ? "" : "text-success"}`}
+          onClick={() => moveTo(5)}
+          disabled={step < 5}
+        >
+          <strong>Results</strong>
+        </Nav.Link>
       </Nav.Item>
     </Nav>
   );

@@ -1,6 +1,7 @@
 const calculate = (req, res) => {
   try {
     const { query } = req;
+    console.log(query);
     const data = Object.entries(query).map(([category, value]) => {
       const result = categories(category, value);
       return {
@@ -26,8 +27,7 @@ const categories = (category, value) => {
     natural_gas: (mc) => mc * 3,
     heating_oil: (mc) => mc * 3,
     coal: (mc) => mc * 3,
-    red_meat: (kg) => kg * 2.4,
-    white_meat: (kg) => kg * 2.4,
+    miles: (kg) => kg * 2.4,
   };
 
   if (!categories[category]) return 0;

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button, ButtonGroup, Card, Col, Form, Row } from "react-bootstrap";
-const Housing = ({ onGoback, onNext, category, totalPeople }) => {
+const Housing = ({ onGoback, onNext, category }) => {
   const [housing, setHousing] = useState(category);
-  const [people, setPeople] = useState(totalPeople);
-
   const addFoodToState = () => {
-    onNext({ category: "housing", payload: housing, people });
+    onNext({ category: "housing", payload: housing });
   };
 
   const onChange = (e) => {
@@ -47,8 +45,9 @@ const Housing = ({ onGoback, onNext, category, totalPeople }) => {
               <Form.Control
                 type="number"
                 min={1}
-                value={people}
-                onChange={(e) => setPeople(e.target.value)}
+                name="total_people"
+                value={housing.total_people}
+                onChange={onChange}
               />
             </Col>
           </Form.Group>

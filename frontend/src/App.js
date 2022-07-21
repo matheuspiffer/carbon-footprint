@@ -1,29 +1,29 @@
 import React, { useState, useReducer, useCallback } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import "./App.css";
-import Food from "./components/Food";
 import Review from "./components/Review";
 import Housing from "./components/Housing";
 import Welcome from "./components/Welcome";
 import Steps from "./components/Steps";
 import Results from "./components/Results";
 import api from "./api";
+import Transportation from "./components/Transportation";
+
+const options = ["electricity", "natural_gas", "heating_oil", "coal", "miles"];
 
 const defaultState = {
   step: 1,
-  total_people: 1,
   categories: {
     housing: {
+      total_people: 1,
       electricity: "",
       natural_gas: "",
       heating_oil: "",
       coal: "",
     },
-    food: {
-      red_meat: "",
-      white_meat: "",
-      diary: "",
-      cereals: "",
+    transportation: {
+      total_vehicles: 0,
+      miles: "",
     },
   },
   results: [],
@@ -96,9 +96,19 @@ function App() {
       let query = [];
       Object.keys(state.categories).forEach((category) => {
         Object.keys(state.categories[category]).forEach((key) => {
+          if (!options.includes(key)) return;
+
           let value = state.categories[category][key];
-          if (category === "housing" && !isNaN(value)) {
-            value = value / state.total_people;
+
+          if (category === "housing") {
+            const total_people = state.categories[category].total_people;
+            value = value / total_people;
+          }
+          if (category === "transportation") {
+            const total_vehicle = state.categories[category].total_vehicles;
+
+            value = value * total_vehicle;
+            console.log(value)
           }
           query.push(`&${key}=${value}`);
         });
@@ -127,14 +137,13 @@ function App() {
                     onNext={onAddNext}
                     onGoBack={onGoBack}
                     category={state.categories.housing}
-                    totalPeople={state.total_people}
                   />
                 )}
                 {state.step === 3 && (
-                  <Food
+                  <Transportation
                     onNext={onAddNext}
                     onGoBack={onGoBack}
-                    category={state.categories.food}
+                    category={state.categories.transportation}
                   />
                 )}
                 {state.step === 4 && (
