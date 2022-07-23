@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup, Card, Col, Form, Row } from "react-bootstrap";
 const Housing = ({ onGoback, onNext, category }) => {
   const [housing, setHousing] = useState(category);
@@ -60,7 +60,7 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Form.Control
               value={housing.electricity}
               type="text"
-              placeholder="KWh/annual"
+              placeholder="avarage total kWh/monthly"
               name="electricity"
               onChange={onChange}
             />
@@ -72,32 +72,32 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Form.Control
               value={housing.natural_gas}
               type="number"
-              placeholder="KWh/annual"
+              placeholder="avarage total therms/monthly"
               name="natural_gas"
               onChange={onChange}
             />
           </Form.Group>
         </Col>
         <Col md={6} className="mb-2">
-          <Form.Group controlId="heating_oil">
-            <Form.Label>Heating Oil</Form.Label>
+          <Form.Group controlId="fuel_oil">
+            <Form.Label>Fuel Oil</Form.Label>
             <Form.Control
-              value={housing.heating_oil}
+              value={housing.fuel_oil}
               type="number"
-              placeholder="KWh/annual"
-              name="heating_oil"
+              placeholder="avarage liters/monthly"
+              name="fuel_oil"
               onChange={onChange}
             />
           </Form.Group>
         </Col>
         <Col md={6}>
-          <Form.Group controlId="coal">
-            <Form.Label>Coal</Form.Label>
+          <Form.Group controlId="lpg">
+            <Form.Label>LPG</Form.Label>
             <Form.Control
-              value={housing.coal}
+              value={housing.lpg}
               type="number"
-              placeholder="KWh/annual"
-              name="coal"
+              placeholder="avarage liters/monthly"
+              name="lpg"
               onChange={onChange}
             />
           </Form.Group>

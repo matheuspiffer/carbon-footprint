@@ -1,0 +1,7 @@
+[
+  { "category": "natural_gas", "value": 11.7 },
+  { "category": "electricity", "value": 0.42964269 },
+  { "category": "fuel_oil", "value": 2.701 },
+  { "category": "lpg", "value": 1.489441979 },
+  { "category": "gasoline", "value": 2.3485 }
+]

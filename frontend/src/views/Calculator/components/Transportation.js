@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup, Card, Col, Form, Row } from "react-bootstrap";
 
 const Transportation = ({ onNext, onGoBack, category }) => {
@@ -47,16 +47,16 @@ const Transportation = ({ onNext, onGoBack, category }) => {
       </Row>
       <Row className="my-3">
         <Col md={8}>
-          <Form.Group as={Row} controlId="miles">
+          <Form.Group as={Row} controlId="gasoline">
             <Form.Label column xs={9}>
-              How many miles have you driven the past 12 months?
+              How many liters of gasoline do you consume per month?
             </Form.Label>
             <Col xs={3}>
               <Form.Control
                 type="number"
                 min={0}
-                value={transportation.miles}
-                name="miles"
+                value={transportation.gasoline}
+                name="gasoline"
                 onChange={onChange}
               />
             </Col>
