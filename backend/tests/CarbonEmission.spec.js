@@ -1,4 +1,4 @@
-import CarbonEmission from "../backend/services/CarbonEmission.js";
+import CarbonEmission from "../services/CarbonEmission.js";
 
 describe("Class - Carbon Emission", () => {
   const carbonEmission = new CarbonEmission();
