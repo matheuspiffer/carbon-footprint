@@ -2,50 +2,43 @@
 
 This calculator calculates a individual carbon footprint based on two methods, which is housing and transportation.
 
-## Authors
-
-- [@matheuspiffer](https://www.github.com/matheuspiffer)
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-## Tech Stack
-
-**Client:** React, Bootstrap
-**Server:** Node, Express
-
-
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/matheuspiffer/carbon-footprint
 ```
 
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
+Go to the root project directory
 
 ```bash
   npm install
 ```
 
+Install dependencies
+
+```bash
+  cd backend
+```
+
 Start the server
 
 ```bash
-  npm run start
+  npm install
 ```
 
+Go back to the root folder
 
+```bash
+  cd ..
+```
 
+Start server and client
 
-
+```bash
+  npm run dev
+```
 
 ## Running Tests
 
@@ -54,3 +47,17 @@ To run tests, run the following command
 ```bash
   npm run test
 ```
+
+## Tech Stack
+
+**Client:** React, Bootstrap
+
+**Server:** Node, Express
+
+## Authors
+
+- [@matheuspiffer](https://www.github.com/matheuspiffer)
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
