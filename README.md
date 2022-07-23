@@ -10,19 +10,19 @@ Clone the project
   git clone https://github.com/matheuspiffer/carbon-footprint
 ```
 
-Go to the root project directory
+Go to the root project directory and Install dependencies
 
 ```bash
   npm install
 ```
 
-Install dependencies
+Go to frontend folder
 
 ```bash
-  cd backend
+  cd frontend
 ```
 
-Start the server
+Install frontend dependencies
 
 ```bash
   npm install
