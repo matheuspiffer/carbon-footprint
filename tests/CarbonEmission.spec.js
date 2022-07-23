@@ -20,12 +20,16 @@ describe("Class - Carbon Emission", () => {
     ];
     expect(result).toEqual(expectedResult);
   });
-  it("should return 0 when value is string", () => {
+  it("should return 0 when value is a string", () => {
     const result = carbonEmission.calculateByCategory("electricity", "abc");
     expect(result).toBe(0);
   });
   it("should return 0 when category is not found", () => {
     const result = carbonEmission.calculateByCategory("abcd1", 23);
     expect(result).toBe(0);
+  });
+  it("should calculate electricity", () => {
+    const result = carbonEmission.calculateByCategory("electricity", 1);
+    expect(result).toBe(0.42964269);
   });
 });

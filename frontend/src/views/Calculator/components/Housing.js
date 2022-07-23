@@ -13,7 +13,7 @@ const Housing = ({ onGoback, onNext, category }) => {
       [name]: value,
     }));
   };
-
+  console.log("HOUSING")
   return (
     <Row className="d-flex">
       <Row className="my-3">
@@ -59,8 +59,9 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Form.Label>Electricity</Form.Label>
             <Form.Control
               value={housing.electricity}
-              type="text"
-              placeholder="avarage total kWh/monthly"
+              type="number"
+              min={0}
+              placeholder="avarage kWh/monthly"
               name="electricity"
               onChange={onChange}
             />
@@ -72,7 +73,8 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Form.Control
               value={housing.natural_gas}
               type="number"
-              placeholder="avarage total therms/monthly"
+              min={0}
+              placeholder="avarage therms/monthly"
               name="natural_gas"
               onChange={onChange}
             />
@@ -84,6 +86,7 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Form.Control
               value={housing.fuel_oil}
               type="number"
+              min={0}
               placeholder="avarage liters/monthly"
               name="fuel_oil"
               onChange={onChange}
@@ -96,6 +99,7 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Form.Control
               value={housing.lpg}
               type="number"
+              min={0}
               placeholder="avarage liters/monthly"
               name="lpg"
               onChange={onChange}

@@ -1,8 +1,7 @@
 import React, { useMemo } from "react";
-import { Col, Row, Table } from "react-bootstrap";
+import { Button, Col, Row, Table } from "react-bootstrap";
 
 const Results = ({ results }) => {
-  
   const total = useMemo(() => {
     console.log("useMemo Results");
     return results.reduce((total, curr) => (total += curr.total), 0);
@@ -18,7 +17,8 @@ const Results = ({ results }) => {
             <thead>
               <tr>
                 <th></th>
-                <th>Total kg/CO2</th>
+                <th>Monthly</th>
+                <th>Annualy</th>
                 <th>%</th>
               </tr>
             </thead>
@@ -27,6 +27,7 @@ const Results = ({ results }) => {
                 <tr key={result.category}>
                   <td>{result.category.split("_").join(" ").toUpperCase()}</td>
                   <td>{result.total.toFixed(2)}</td>
+                  <td>{(result.total * 12).toFixed(2)}</td>
                   <td>{`${
                     total ? ((result.total / total) * 100).toFixed() : 0
                   }%`}</td>
@@ -34,14 +35,22 @@ const Results = ({ results }) => {
               ))}
               <tr>
                 <td>
-                  <strong>TOTAL</strong>
+                  <strong>TOTAL kg/CO2</strong>
+                </td>
+                <td>
+                  <strong>{`${total.toFixed(2)}`}</strong>
                 </td>
                 <td colSpan={2}>
-                  <strong>{total.toFixed(2)}</strong>
+                  <strong>{`${(total * 12).toFixed(2)}`}</strong>
                 </td>
               </tr>
             </tbody>
           </Table>
+        </Row>
+        <Row>
+          <Col className="d-flex justify-content-center">
+            <Button onClick={() => document.location.reload()}>START OVER</Button>
+          </Col>
         </Row>
       </Col>
     </Row>

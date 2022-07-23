@@ -8,6 +8,9 @@ const Transportation = ({ onNext, onGoBack, category }) => {
     onNext({ category: "transportation", payload: transportation });
   };
 
+  console.log("TRANSPORTATION")
+
+
   const onChange = (e) => {
     const { name, value } = e.target;
     setTransportation((prev) => ({

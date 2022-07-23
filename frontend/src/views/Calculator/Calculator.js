@@ -73,26 +73,23 @@ const stateReducer = (state, action) => {
 const Calculator = () => {
   const [state, dispatch] = useReducer(stateReducer, defaultState);
 
-  const onAddNext = useCallback(({ payload, category }) => {
-    console.log("onAddNext");
+  const onAddNext = ({ payload, category }) => {
     dispatch({ type: "ADD", payload, category });
-  }, []);
+  };
 
-  const onGoBack = useCallback(() => {
-    console.log("onGoBack");
+  const onGoBack = () => {
     dispatch({ type: "GO_BACK" });
-  }, []);
+  };
 
-  const onNext = useCallback(() => {
-    console.log("onNext");
+  const onNext = () => {
     dispatch({ type: "NEXT" });
-  }, []);
+  };
 
-  const moveTo = useCallback((step) => {
+  const moveTo = (step) => {
     dispatch({ type: "MOVE_TO", payload: step });
-  }, []);
+  };
 
-  const onCalculate = useCallback(async () => {
+  const onCalculate = async () => {
     //fetch results from server
     try {
       let query = [];
@@ -122,13 +119,7 @@ const Calculator = () => {
       console.error(error);
       alert("Error");
     }
-  }, [state.categories]);
-
-  const results = useMemo(() => {
-    console.log("useMemo APp");
-    return state.results;
-  }, [state.results]);
-
+  };
   return (
     <Row className="d-flex flex-column g-4 mt-4">
       <Col xs={12}>
@@ -160,7 +151,7 @@ const Calculator = () => {
               />
             )}
             {state.step === 5 && (
-              <Results results={results} onGoBack={onGoBack} />
+              <Results results={state.results} onGoBack={onGoBack} />
             )}
           </Form>
         </Row>
@@ -169,5 +160,4 @@ const Calculator = () => {
   );
 };
 
-
-export default Calculator
+export default Calculator;

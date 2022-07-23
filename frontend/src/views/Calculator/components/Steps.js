@@ -1,6 +1,8 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 const Steps = ({ step, moveTo }) => {
+
+  console.log("STEPS")
   return (
     <Nav variant="tabs" className="d-flex justify-content-around bg-light">
       <Nav.Item>
