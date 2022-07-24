@@ -110,7 +110,7 @@ const Housing = ({ onGoBack, onNext, category }) => {
       <Row className="mt-4">
         <ButtonGroup>
           <Col className="d-flex justify-content-between">
-            <Button variant="success" onClick={onGoBack}>
+            <Button variant="success" onClick={onGoBack} data-testid="backBtn" >
               Back
             </Button>
             <Button variant="success" onClick={addFoodToState}>
