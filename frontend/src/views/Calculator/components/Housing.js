@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup, Card, Col, Form, Row } from "react-bootstrap";
-const Housing = ({ onGoback, onNext, category }) => {
+const Housing = ({ onGoBack, onNext, category }) => {
   const [housing, setHousing] = useState(category);
+
   const addFoodToState = () => {
     onNext({ category: "housing", payload: housing });
   };
@@ -13,7 +14,6 @@ const Housing = ({ onGoback, onNext, category }) => {
       [name]: value,
     }));
   };
-  console.log("HOUSING")
   return (
     <Row className="d-flex">
       <Row className="my-3">
@@ -25,7 +25,7 @@ const Housing = ({ onGoback, onNext, category }) => {
             <Card.Body>
               <Card.Text>
                 Enter your consumption of each type of energy, and press the
-                Calculate button
+                Next button
               </Card.Text>
               <Card.Text>
                 Your individual footprint is calculated by dividing the amount
@@ -110,7 +110,7 @@ const Housing = ({ onGoback, onNext, category }) => {
       <Row className="mt-4">
         <ButtonGroup>
           <Col className="d-flex justify-content-between">
-            <Button variant="success" onClick={onGoback}>
+            <Button variant="success" onClick={onGoBack}>
               Back
             </Button>
             <Button variant="success" onClick={addFoodToState}>

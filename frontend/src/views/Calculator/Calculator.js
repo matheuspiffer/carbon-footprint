@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback, useMemo } from "react";
+import React, { useReducer } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import api from "../../api";
 import Steps from "./components/Steps";
@@ -15,14 +15,14 @@ const defaultState = {
   categories: {
     housing: {
       total_people: 1,
-      electricity: "",
-      natural_gas: "",
-      fuel_oil: "",
-      lpg: "",
+      electricity: 0,
+      natural_gas: 0,
+      fuel_oil: 0,
+      lpg: 0,
     },
     transportation: {
       total_vehicles: 0,
-      gasoline: "",
+      gasoline: 0,
     },
   },
   results: [],
@@ -108,7 +108,6 @@ const Calculator = () => {
             const total_vehicle = state.categories[category].total_vehicles;
 
             value = value * total_vehicle;
-            console.log(value);
           }
           query.push(`&${key}=${value}`);
         });

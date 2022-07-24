@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
 
 const Welcome = ({ onNext }) => {
-  console.log("WELCOME")
   return (
     <Col xs={12}>
       <Card text="dark">

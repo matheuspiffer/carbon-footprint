@@ -3,11 +3,8 @@ import { Button, Col, Row, Table } from "react-bootstrap";
 
 const Results = ({ results }) => {
   const total = useMemo(() => {
-    console.log("useMemo Results");
     return results.reduce((total, curr) => (total += curr.total), 0);
   }, [results]);
-
-  console.log("Results");
 
   return (
     <Row>
@@ -49,7 +46,9 @@ const Results = ({ results }) => {
         </Row>
         <Row>
           <Col className="d-flex justify-content-center">
-            <Button onClick={() => document.location.reload()}>START OVER</Button>
+            <Button onClick={() => document.location.reload()}>
+              START OVER
+            </Button>
           </Col>
         </Row>
       </Col>
