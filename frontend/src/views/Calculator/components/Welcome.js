@@ -14,7 +14,7 @@ const Welcome = ({ onNext }) => {
             emissions from the previous 12 months.
           </Card.Text>
           <Col className="d-flex justify-content-center">
-            <Button variant="success" size="lg" onClick={onNext}>
+            <Button variant="success" size="lg" onClick={onNext} data-testid="startBtn">
               START
             </Button>
           </Col>

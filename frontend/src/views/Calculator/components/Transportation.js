@@ -68,7 +68,7 @@ const Transportation = ({ onNext, onGoBack, category }) => {
           <Button variant="success" onClick={onGoBack}>
             Back
           </Button>
-          <Button variant="success" onClick={addTransportationToState}>
+          <Button variant="success" onClick={addTransportationToState} data-testid="transportationNextBtn">
             Next
           </Button>
         </Col>

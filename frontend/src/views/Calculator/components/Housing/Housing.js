@@ -113,7 +113,7 @@ const Housing = ({ onGoBack, onNext, category }) => {
             <Button variant="success" onClick={onGoBack} data-testid="backBtn" >
               Back
             </Button>
-            <Button variant="success" onClick={addFoodToState}>
+            <Button variant="success" onClick={addFoodToState} data-testid="housingNextBtn">
               Next
             </Button>
           </Col>
