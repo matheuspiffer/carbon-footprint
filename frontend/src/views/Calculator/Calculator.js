@@ -3,7 +3,7 @@ import { Col, Form, Row } from "react-bootstrap";
 import api from "../../api";
 import Steps from "./components/Steps";
 import Welcome from "./components/Welcome";
-import Housing from "./components/Housing";
+import Housing from "./components/Housing/Housing";
 import Transportation from "./components/Transportation";
 import Review from "./components/Review";
 import Results from "./components/Results";
