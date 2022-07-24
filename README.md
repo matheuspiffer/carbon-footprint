@@ -1,6 +1,6 @@
 # Carbon Footprint calculator
 
-This calculator calculates a individual carbon footprint based on two methods, which is housing and transportation.
+This calculator calculates a individual carbon footprint based on two methods, housing and transportation.
 
 ## Run Locally
 
