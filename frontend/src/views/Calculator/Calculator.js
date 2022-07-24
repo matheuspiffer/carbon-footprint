@@ -4,7 +4,7 @@ import api from "../../api";
 import Steps from "./components/Steps";
 import Welcome from "./components/Welcome";
 import Housing from "./components/Housing/Housing";
-import Transportation from "./components/Transportation";
+import Transportation from "./components/Transportation/Transportation";
 import Review from "./components/Review";
 import Results from "./components/Results";
 

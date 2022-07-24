@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "description": "Carbon Emissions Management",
   "main": "server.js",
-  "type": "module",
   "jest": {
     "modulePathIgnorePatterns": [
       "package.json"
     ]
   },
   "scripts": {
-    "start": "node --experimental-json-modules backend/server",
-    "server": "nodemon --experimental-json-modules backend/server",
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage --no-cache"
+    "test": "concurrently \"npm run test-server\" \"npm run test-client\"",
+    "test-client": "npm test --prefix frontend",
+    "test-server": "jest --coverage --no-cache backend/tests"
   },
   "author": "Matheus Piffer",
   "license": "MIT",

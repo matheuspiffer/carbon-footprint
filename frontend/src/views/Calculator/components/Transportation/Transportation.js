@@ -65,10 +65,14 @@ const Transportation = ({ onNext, onGoBack, category }) => {
       </Row>
       <ButtonGroup>
         <Col className="d-flex justify-content-between">
-          <Button variant="success" onClick={onGoBack}>
+          <Button variant="success" onClick={onGoBack} data-testid="backBtn">
             Back
           </Button>
-          <Button variant="success" onClick={addTransportationToState} data-testid="transportationNextBtn">
+          <Button
+            variant="success"
+            onClick={addTransportationToState}
+            data-testid="transportationNextBtn"
+          >
             Next
           </Button>
         </Col>

@@ -1,4 +1,4 @@
-import EmissionFactor from "./EmissionFactor.js";
+const EmissionFactor = require("./EmissionFactor");
 class CarbonEmission extends EmissionFactor {
   calculate(object) {
     return Object.entries(object).map(([category, value]) => ({
@@ -15,4 +15,4 @@ class CarbonEmission extends EmissionFactor {
   }
 }
 
-export default CarbonEmission;
+module.exports = CarbonEmission;

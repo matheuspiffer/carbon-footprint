@@ -1,4 +1,4 @@
-import data from "../data.json";
+const data = require("../data.json");
 
 class EmissionFactor {
   getEmissionFactorByCategory(category) {
@@ -6,4 +6,4 @@ class EmissionFactor {
     return emissionFactor && emissionFactor.value;
   }
 }
-export default EmissionFactor;
+module.exports = EmissionFactor;

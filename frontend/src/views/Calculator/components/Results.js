@@ -46,7 +46,7 @@ const Results = ({ results }) => {
         </Row>
         <Row>
           <Col className="d-flex justify-content-center">
-            <Button onClick={() => document.location.reload()}>
+            <Button onClick={() => window.location.reload()}>
               START OVER
             </Button>
           </Col>

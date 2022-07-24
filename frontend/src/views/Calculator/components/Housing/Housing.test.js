@@ -46,8 +46,6 @@ describe("Component - Housing", () => {
     const mockNextBtn = jest.fn();
 
     render(<Housing onNext={mockNextBtn} category={category} />);
-
-    // const btn = screen.getByTestId('backBtn')
     const btn = screen.getByRole("button", { name: "Next" });
     fireEvent.click(btn);
     expect(mockNextBtn).toBeCalledTimes(1);

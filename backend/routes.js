@@ -1,7 +1,7 @@
-import express from "express";
-import { calculate } from "./controllers/CarbonEmissionController.js";
+const express = require("express");
+const CarbonEmissionController = require("./controllers/CarbonEmissionController");
 const router = express.Router();
 
-router.route("/calculate").get(calculate);
+router.route("/calculate").get(CarbonEmissionController.calculate);
 
-export default router;
+module.exports = router;

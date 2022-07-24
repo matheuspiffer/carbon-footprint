@@ -1,4 +1,4 @@
-import CarbonEmission from "../services/CarbonEmission.js";
+const CarbonEmission = require("../services/CarbonEmission");
 
 describe("Class - Carbon Emission", () => {
   const carbonEmission = new CarbonEmission();
@@ -20,6 +20,7 @@ describe("Class - Carbon Emission", () => {
     ];
     expect(result).toEqual(expectedResult);
   });
+
   it("should return 0 when value is a string", () => {
     const result = carbonEmission.calculateByCategory("electricity", "abc");
     expect(result).toBe(0);
@@ -31,5 +32,17 @@ describe("Class - Carbon Emission", () => {
   it("should calculate electricity", () => {
     const result = carbonEmission.calculateByCategory("electricity", 1);
     expect(result).toBe(0.42964269);
+  });
+  it("should calculate natural gas", () => {
+    const result = carbonEmission.calculateByCategory("natural_gas", 1);
+    expect(result).toBe(11.7);
+  });
+  it("should calculate fuel oil", () => {
+    const result = carbonEmission.calculateByCategory("fuel_oil", 1);
+    expect(result).toBe(2.701);
+  });
+  it("should calculate gasoline", () => {
+    const result = carbonEmission.calculateByCategory("gasoline", 1);
+    expect(result).toBe(2.3485);
   });
 });
